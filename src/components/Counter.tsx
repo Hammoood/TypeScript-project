@@ -1,7 +1,5 @@
 //useReducer
-
 import { useReducer } from "react"
-
 type counterState={
     count: number
 }
@@ -13,9 +11,7 @@ type resetAction={
   type: 'reset'
 }
 type actionType= updateAction | resetAction 
-
 const initialState = {count: 0}
-
 function reducer(state : counterState, action : actionType){
     switch(action.type){
         case 'increment' :
@@ -28,7 +24,6 @@ function reducer(state : counterState, action : actionType){
            return state    
     }
 }
-
 export const Counter = () => {
     const [state,dispatch] = useReducer(reducer, initialState)
     return(

@@ -6,7 +6,7 @@ number?: number
 isLogin: boolean
 }
 
-export const User = (props : UserData) => {
+export const User1 = (props : UserData) => {
     const {number = 0} = props
     return(
         <div>
