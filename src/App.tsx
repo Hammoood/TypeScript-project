@@ -13,6 +13,15 @@ import { PersonList } from './components/PersonList';
 import { Status } from './components/Status';
 import { User } from './components/context/User';
 import { User1 } from './components/User1';
+import { MuteableRef } from './components/ref/MuteableRef';
+import { Private } from './components/Auth/Private';
+import { Profile } from './components/Auth/Profile';
+import { List } from './components/List/List';
+import { RandomNumber } from './components/RandomNumber/RandomNumber';
+import { TemplateLiter } from './components/template-liter/TemplateLiter';
+import { CustomerButton } from './components/html/Button';
+import { CustomerInput } from './components/html/Input';
+import { Text } from './components/polymorrphics/Text';
 
 
 
@@ -58,7 +67,33 @@ function App() {
       <UserContextProvider>
         <User/>
       </UserContextProvider>
-    
+      <MuteableRef/>
+      <Private isLoggedIn={true} Component={Profile}/>
+      <List items={['h','b','v']} onClicked={(item)=>{console.log(item)}} />
+      <List items={[1,2,3,4]} onClicked={(item)=>{console.log(item)}} />
+      <List items={[
+        {
+          first: 'mohammad',
+          second: 'naama'
+        },
+        {
+          first: 'mohammad',
+          second: 'naama'
+        },
+        {
+          first: 'mohammad',
+          second: 'naama'
+        },
+      ]} onClicked={(item)=>{console.log(item)}} />
+      <RandomNumber value={10} isPositive/>
+      <TemplateLiter position='center' />
+      <CustomerButton variants='primary' onClick={()=>console.log('clicked')}>
+         my button
+      </CustomerButton> 
+        
+       <Text as='h1' color='primary' size='lg'>hhhhhh</Text> 
+       <Text as='p' color='secondary'>gggggg</Text>
+       <Text as='label' size='md'>kkkkkk</Text>
     </div>
   );
 }
